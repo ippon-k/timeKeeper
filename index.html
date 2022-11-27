@@ -62,10 +62,21 @@
 
     // ----------------------validation-------------------//
 
+    function isEmptyOrSpaces(str) {
+      return str === null || str.match(/^ *$/) !== null;
+    }
+
     function validation() {
       let nameregex = /^[a-zA-Z\s]+$/;
       let emailregex = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
       let userregex = /^[a-zA-Z0-9]{5,}$/;
+
+      //空チェック
+      if (isEmptyOrSpaces(name.value) || isEmptyOrSpaces(email.value) || isEmptyOrSpaces(username.value) ||
+        isEmptyOrSpaces(pass.value)) {
+        alert("you cannot left any field empty");
+        return false;
+      }
 
       if (!nameregex.test(name.value)) {
         alert("the name should only contain alphabets!");
@@ -100,17 +111,24 @@
               fullname: name.value,
               email: email.value,
               username: username.value,
-              password: pass.value
+              password: encPass()
             })
             .then(() => {
               alert("user added successfully");
             })
-            .chatch((error) => {
+            .catch((error) => {
               alert("error" + error);
             })
         }
       });
     }
+    // ----------------------encription-------------------//
+
+    function encPass() {
+      var pass12 = CryptoJS.AES.encrypt(pass.value, pass.value);
+      return pass12.toString();
+    }
+
     // ----------------------register user to firebase-------------------//
     submit.addEventListener('click', RegisterUser);
   </script>
