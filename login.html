@@ -54,7 +54,53 @@
 
     const db = getDatabase();
 
+    // ----------------------the refreneces-------------------//
 
+    const username = document.getElementById('userInp');
+    const pass = document.getElementById('passInp');
+    const submit = document.getElementById('sub_btn');
+
+    //--------------------authetication process---------------------//
+    function AuthenticateUser() {
+      const dbref = ref(db);
+
+      get(child(dbRef, "UserList/" + username.value)).then((snapshot) => {
+        if (snapshot.exists()) {
+          let dbpass = decPass(snapshot.val().password);
+          if (dbpass == pass.value) {
+            login();
+          }
+          else {
+            alert("user does not exist");
+          }
+        }
+        else {
+          alert("username or password is invalid");
+        }
+      });
+    }
+
+    //-----------------------decript process------------------------------//
+    function decPass() {
+      var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
+      return pass12.toString(criptoJS.enc.Utf8);
+    }
+
+    //-----------------------login------------------------------//
+    function login(user) {
+      let keepLoggedIn = document.getElementById('customSwitch1').checked;
+
+      if (!keepLoggedIn) {
+        sessionStorage.setItem('user', JSON.stringify(user));
+        window.location = "home.html";
+      }
+
+      else {
+        localStorage.setItem('keepLoggedIn', 'yes');
+        localStorage.setItem('user', JSON.stringify(user));
+        window.location = "home.html"
+      }
+    }
 
   </script>
 </body>
