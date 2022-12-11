@@ -8,9 +8,7 @@
   <title>objects</title>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> -->
   <!-- <link rel="stylesheet" href="css/reset.css"> -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -65,7 +63,7 @@ if ($positive_after) {
     <p>稼働時間（休憩含む）：<?= $actual_time ?>min</p>
     <p>早朝残業：<?= $before ?>min</p>
     <p>残業：<?= $after_txt ?></p>
-    <a href="index.html">back</a>
+    <a href=" index.html">back</a>
   </div><br>
 
 </body>
