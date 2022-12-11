@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>objects</title>
+  <title>over work checker</title>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> -->
   <!-- <link rel="stylesheet" href="css/reset.css"> -->
   <link rel="stylesheet" href="style.css">
@@ -56,7 +56,7 @@ if ($positive_after) {
 
 <body>
   <div>
-    <h1>work time checker</h1>
+    <h1>over work checker</h1>
     <p>please insert</p>
     <p>始業時間：<?= $_POST["start_time"] ?></p>
     <p>終業時間：<?= $_POST["end_time"] ?></p>
