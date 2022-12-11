@@ -57,7 +57,7 @@ if ($positive_after) {
 <body>
   <div>
     <h1>over work checker</h1>
-    <p>please insert</p>
+    <h2>result</h2>
     <p>始業時間：<?= $_POST["start_time"] ?></p>
     <p>終業時間：<?= $_POST["end_time"] ?></p>
     <p>稼働時間（休憩含む）：<?= $actual_time ?>min</p>

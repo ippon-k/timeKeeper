@@ -12,9 +12,11 @@
 <body>
     <form method="post" action="result.php">
         <h1>over work checker</h1>
-        <p>please insert time</p>
-        <input type="time" name="start_time">
-        <input type="time" name="end_time">
+        <h2>please insert time</h2>
+        <label for="start">始業時間</label>
+        <input type="time" id="start" name="start_time">
+        <label for="end">終業時間</label>
+        <input type="time" id="end" name="end_time">
         <input type="submit" value="send">
     </form>
 </body>
