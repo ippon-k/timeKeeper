@@ -14,7 +14,11 @@ function is_positive_integer($after)
 $start_time = strtotime("8:59:00"); //始業時刻
 $end_time = strtotime("19:01:00"); //終業時刻
 
+echo $start_time . "/start/";
+echo $end_time . "/end/";
+
 $actual_time = (($end_time - $start_time) / 60); //実働時間（min)
+echo $actual_time . "*check*";
 $prescribed_time = (600);
 
 var_dump("実働時間（分）" . $actual_time);
