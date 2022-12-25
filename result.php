@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>over work checker</title>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="css/reset.css"> -->
+
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -22,6 +21,11 @@ function is_positive_integer($after)
     \FILTER_VALIDATE_INT,
     $options
   ));
+}
+
+function h($val)
+{
+  return htmlspecialchars($val, ENT_QUOTES);
 }
 
 $start_time = strtotime($_POST["start_time"]); // 始業時間
@@ -58,8 +62,8 @@ if ($positive_after) {
   <div>
     <h1>over work checker</h1>
     <h2>result</h2>
-    <p>始業時間：<?= $_POST["start_time"] ?></p>
-    <p>終業時間：<?= $_POST["end_time"] ?></p>
+    <p>始業時間：<?= h($_POST["start_time"]) ?></p>
+    <p>終業時間：<?= h($_POST["end_time"]) ?></p>
     <p>稼働時間（休憩含む）：<?= $actual_time ?>min</p>
     <p>早朝残業：<?= $before ?>min</p>
     <p>残業：<?= $after_txt ?></p>
